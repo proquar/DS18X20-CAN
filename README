@@ -1,0 +1,21 @@
+ 
+ DS18X20 to CAN interface for Atmel AVR
+-------------------------------------------------------------------------------
+
+This program supports DS18S20 and DS18B20 1-Wire sensors on 3 independent
+1-Wire busses.
+
+The busses are scanned for sensors and powerup and therefore the device has to 
+be restarted when new sensors are attached. Data then is collected as often as
+possible and send out via CAN.
+
+The device sends a extended CAN message with ID 0x20a0, the length is 8 bytes.
+The first 6 bytes are the relevant parts of the 1-Wire ID (no family code, no
+CRC), the last 2 bytes are the temperature, transmitted as a signed two's
+complement number with 6 (binary) fractional digits and thus has to be devided
+by 64.
+
+
+You may need to recompile the libcan.a file.
+See http://www.kreatives-chaos.com/artikel/universelle-can-bibliothek for more
+information.
