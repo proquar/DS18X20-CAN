@@ -30,17 +30,17 @@
 #define OW2_DDR		DDRB
 #define OW2_PORT	PORTB
 #define OW2_PIN		PINB
-#define OW2_BIT		PB6
+#define OW2_BIT		PB0
 
-#define OW1_DDR		DDRD
-#define OW1_PORT	PORTD
-#define OW1_PIN		PIND
-#define OW1_BIT		PD3
+#define OW1_DDR		DDRB
+#define OW1_PORT	PORTB
+#define OW1_PIN		PINB
+#define OW1_BIT		PB7
 
-#define OW0_DDR		DDRB
-#define OW0_PORT	PORTB
-#define OW0_PIN		PINB
-#define OW0_BIT		PB0
+#define OW0_DDR		DDRD
+#define OW0_PORT	PORTD
+#define OW0_PIN		PIND
+#define OW0_BIT		PD4
 
 #define MYID		0x20a0
 
