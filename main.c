@@ -42,6 +42,21 @@
 #define OW0_PIN		PIND
 #define OW0_BIT		PD4
 
+// #define OW2_DDR		DDRB
+// #define OW2_PORT	PORTB
+// #define OW2_PIN		PINB
+// #define OW2_BIT		PB0
+// 
+// #define OW1_DDR		DDRB
+// #define OW1_PORT	PORTB
+// #define OW1_PIN		PINB
+// #define OW1_BIT		PB6
+// 
+// #define OW0_DDR		DDRD
+// #define OW0_PORT	PORTD
+// #define OW0_PIN		PIND
+// #define OW0_BIT		PD3
+
 #define MYID		0x20a0
 
 
@@ -175,6 +190,7 @@ int main(void) {
 			if (DS18X20_start_meas(DS18X20_POWER_PARASITE, NULL) == DS18X20_OK) dowait=1;
 		}
 		if (dowait) {
+			//_delay_ms(1100);
 			_delay_ms(DS18B20_TCONV_12BIT);
 			
 			for(i=0; i<sensor_number; i++) {

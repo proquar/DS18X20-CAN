@@ -33,7 +33,8 @@ int16_t DS18X20_meas_format ( uint8_t fc, uint8_t *sp ) {
 	meas |= ((uint16_t)sp[1])<<8; // MSB
 	
 	if( fc == DS18S20_ID ) { //9bit
-		meas<<=5;
+		meas>>=1;	//truncate .5 bit
+		meas<<=6;
 		
 		// get up to 12bit precision from count_remain:
 		meas += 0x30; // -0.25 +16/16
